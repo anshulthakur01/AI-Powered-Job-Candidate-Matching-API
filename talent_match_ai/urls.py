@@ -17,8 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+API_V1_PREFIX = "api/v1/"
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('accounts/', include("accounts.urls")),
-    path('', include("job_portal.urls"))
+    path(f'{API_V1_PREFIX}accounts/', include("accounts.urls")),
+    path(f'{API_V1_PREFIX}', include("job_portal.urls"))
 ]
