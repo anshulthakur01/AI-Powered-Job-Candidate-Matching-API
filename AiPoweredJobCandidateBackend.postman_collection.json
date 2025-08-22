@@ -1,0 +1,2529 @@
+{
+	"info": {
+		"_postman_id": "f6023cf1-92cf-495c-802d-27fd01d30ad5",
+		"name": "AiPoweredJobCandidateBackend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34479877"
+	},
+	"item": [
+		{
+			"name": "Accounts",
+			"item": [
+				{
+					"name": "Authentication",
+					"item": [
+						{
+							"name": "TokenObtain",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"admin\"  \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}accounts/token",
+									"host": [
+										"{{base_url}}accounts"
+									],
+									"path": [
+										"token"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "InvalidPayload",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}accounts/token",
+											"host": [
+												"{{base_url}}accounts"
+											],
+											"path": [
+												"token"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Date",
+											"value": "Wed, 20 Aug 2025 18:26:25 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "WSGIServer/0.2 CPython/3.12.0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept"
+										},
+										{
+											"key": "Allow",
+											"value": "POST, OPTIONS"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Length",
+											"value": "79"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"username\": [\n        \"This field is required.\"\n    ],\n    \"password\": [\n        \"This field is required.\"\n    ]\n}"
+								},
+								{
+									"name": "WrongCrendentials",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"\"  \r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}accounts/token",
+											"host": [
+												"{{base_url}}accounts"
+											],
+											"path": [
+												"token"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Wed, 20 Aug 2025 18:28:35 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "WSGIServer/0.2 CPython/3.12.0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "WWW-Authenticate",
+											"value": "Bearer realm=\"api\""
+										},
+										{
+											"key": "Vary",
+											"value": "Accept"
+										},
+										{
+											"key": "Allow",
+											"value": "POST, OPTIONS"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Length",
+											"value": "63"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										}
+									],
+									"cookie": [
+										{
+											"expires": "Invalid Date",
+											"domain": "",
+											"path": ""
+										}
+									],
+									"body": "{\n    \"detail\": \"No active account found with the given credentials\"\n}"
+								},
+								{
+									"name": "TokenObtained",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"admin\"  \r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}accounts/token",
+											"host": [
+												"{{base_url}}accounts"
+											],
+											"path": [
+												"token"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Date",
+											"value": "Wed, 20 Aug 2025 18:29:34 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "WSGIServer/0.2 CPython/3.12.0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept"
+										},
+										{
+											"key": "Allow",
+											"value": "POST, OPTIONS"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Length",
+											"value": "489"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc1NTgwMDk3NCwiaWF0IjoxNzU1NzE0NTc0LCJqdGkiOiIxYzQ0OTE5MzFjZTc0OGZhOGNiYzhiZGUxOTkwMDEyOSIsInVzZXJfaWQiOiIxIn0.fJhnWz4tmSUA_7GEwQCl0UZSUmffG8AYN6KesIYU3L8\",\n    \"access\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU1ODAwOTc0LCJpYXQiOjE3NTU3MTQ1NzQsImp0aSI6IjFkZTRlODdiYzdkNzRjOThhNTI0YjBmMTJkYWU4MjBmIiwidXNlcl9pZCI6IjEifQ.kKmft6DCDyw-GDX6HgYYtwMUEqbQwahWDY5eNTui9PU\"\n}"
+								}
+							]
+						},
+						{
+							"name": "RefreshToken",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc1NTgwMDk3NCwiaWF0IjoxNzU1NzE0NTc0LCJqdGkiOiIxYzQ0OTE5MzFjZTc0OGZhOGNiYzhiZGUxOTkwMDEyOSIsInVzZXJfaWQiOiIxIn0.fJhnWz4tmSUA_7GEwQCl0UZSUmffG8AYN6KesIYU3L8\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}accounts/token/refresh",
+									"host": [
+										"{{base_url}}accounts"
+									],
+									"path": [
+										"token",
+										"refresh"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "TokenRefreshed",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc1NTgwMDk3NCwiaWF0IjoxNzU1NzE0NTc0LCJqdGkiOiIxYzQ0OTE5MzFjZTc0OGZhOGNiYzhiZGUxOTkwMDEyOSIsInVzZXJfaWQiOiIxIn0.fJhnWz4tmSUA_7GEwQCl0UZSUmffG8AYN6KesIYU3L8\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}accounts/token/refresh",
+											"host": [
+												"{{base_url}}accounts"
+											],
+											"path": [
+												"token",
+												"refresh"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Date",
+											"value": "Wed, 20 Aug 2025 18:35:11 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "WSGIServer/0.2 CPython/3.12.0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept"
+										},
+										{
+											"key": "Allow",
+											"value": "POST, OPTIONS"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Length",
+											"value": "244"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"access\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU1ODAxMzExLCJpYXQiOjE3NTU3MTQ5MTEsImp0aSI6ImFjZjA0NDY0YjM1MzRjZWQ5NzRiOTVkZDc0NDAyNmU4IiwidXNlcl9pZCI6IjEifQ.sMmyQtmW2Jb9dsBVbVc_qc6rjI5CjzK86JM2rev6G3g\"\n}"
+								},
+								{
+									"name": "MissingRequiredPayload",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}accounts/token/refresh",
+											"host": [
+												"{{base_url}}accounts"
+											],
+											"path": [
+												"token",
+												"refresh"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Date",
+											"value": "Wed, 20 Aug 2025 18:35:33 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "WSGIServer/0.2 CPython/3.12.0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept"
+										},
+										{
+											"key": "Allow",
+											"value": "POST, OPTIONS"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Length",
+											"value": "39"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"refresh\": [\n        \"This field is required.\"\n    ]\n}"
+								},
+								{
+									"name": "InvalidRefreshToken",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc1NTgwMDk3NCwiaWF0IjoxNzU1NzE0NTc0LCJqdGkiOiIxYzQ0OTE5MzFjZTc0OGZhOGNiYzhiZGUxOTkwMDEyOSIsInVzZXJfaWQiOiIxIn0.\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}accounts/token/refresh",
+											"host": [
+												"{{base_url}}accounts"
+											],
+											"path": [
+												"token",
+												"refresh"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Date",
+											"value": "Wed, 20 Aug 2025 18:36:34 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "WSGIServer/0.2 CPython/3.12.0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "WWW-Authenticate",
+											"value": "Bearer realm=\"api\""
+										},
+										{
+											"key": "Vary",
+											"value": "Accept"
+										},
+										{
+											"key": "Allow",
+											"value": "POST, OPTIONS"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Length",
+											"value": "54"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"detail\": \"Token is invalid\",\n    \"code\": \"token_not_valid\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "CandidateAPIs",
+					"item": [
+						{
+							"name": "CandidateListing",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}accounts/candidates",
+									"host": [
+										"{{base_url}}accounts"
+									],
+									"path": [
+										"candidates"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "InvalidAuth",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}accounts/candidates",
+											"host": [
+												"{{base_url}}accounts"
+											],
+											"path": [
+												"candidates"
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								}
+							]
+						},
+						{
+							"name": "CandidateCreation",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"test_user2\",\r\n    \"password\": \"admin\",\r\n    \"user_profile\": {\r\n        \"headline\": \"Python Developer\",\r\n        \"summary\": \"I am a python developer with 1.5 years experience.\",\r\n        \"contact_number\": \"+91 7877777777\",\r\n        \"work_experience\": 0,\r\n        \"current_salary\": 180000,\r\n        \"expected_salary\": 420000,\r\n        \"notice_period\": 90,\r\n        \"primary_address\": \"Mohali\",\r\n        \"secondary_address\": \"Mohali\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}accounts/candidates",
+									"host": [
+										"{{base_url}}accounts"
+									],
+									"path": [
+										"candidates"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "MissingRequiredFields",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}accounts/candidates",
+											"host": [
+												"{{base_url}}accounts"
+											],
+											"path": [
+												"candidates"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Date",
+											"value": "Thu, 21 Aug 2025 15:51:15 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "WSGIServer/0.2 CPython/3.12.0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept, Cookie"
+										},
+										{
+											"key": "Allow",
+											"value": "GET, POST, HEAD, OPTIONS"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Length",
+											"value": "122"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"username\": [\n        \"This field is required.\"\n    ],\n    \"password\": [\n        \"This field is required.\"\n    ],\n    \"user_profile\": [\n        \"This field is required.\"\n    ]\n}"
+								},
+								{
+									"name": "UserAlreadyExistError",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"username\": \"admin1\",\r\n    \"password\": \"admin\",\r\n    \"user_profile\": {\r\n        \"headline\": \"Python Developer\",\r\n        \"summary\": \"I am a python developer with 1.5 years experience.\",\r\n        \"contact_number\": \"+91 7877777777\",\r\n        \"work_experience\": 0,\r\n        \"current_salary\": 180000,\r\n        \"expected_salary\": 420000,\r\n        \"notice_period\": 90,\r\n        \"primary_address\": \"Mohali\",\r\n        \"secondary_address\": \"Mohali\"\r\n    }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}accounts/candidates",
+											"host": [
+												"{{base_url}}accounts"
+											],
+											"path": [
+												"candidates"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Date",
+											"value": "Thu, 21 Aug 2025 16:09:02 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "WSGIServer/0.2 CPython/3.12.0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept, Cookie"
+										},
+										{
+											"key": "Allow",
+											"value": "GET, POST, HEAD, OPTIONS"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Length",
+											"value": "58"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"username\": [\n        \"A user with that username already exists.\"\n    ]\n}"
+								},
+								{
+									"name": "SuccessfulProfileCreation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"username\": \"admin11\",\r\n    \"password\": \"admin\",\r\n    \"user_profile\": {\r\n        \"headline\": \"Python Developer\",\r\n        \"summary\": \"I am a python developer with 1.5 years experience.\",\r\n        \"contact_number\": \"+91 7877777777\",\r\n        \"work_experience\": 0,\r\n        \"current_salary\": 180000,\r\n        \"expected_salary\": 420000,\r\n        \"notice_period\": 90,\r\n        \"primary_address\": \"Mohali\",\r\n        \"secondary_address\": \"Mohali\"\r\n    }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}accounts/candidates",
+											"host": [
+												"{{base_url}}accounts"
+											],
+											"path": [
+												"candidates"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Date",
+											"value": "Thu, 21 Aug 2025 16:12:10 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "WSGIServer/0.2 CPython/3.12.0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept, Cookie"
+										},
+										{
+											"key": "Allow",
+											"value": "GET, POST, HEAD, OPTIONS"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Length",
+											"value": "371"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 3,\n    \"username\": \"admin11\",\n    \"email\": \"\",\n    \"user_profile\": {\n        \"headline\": \"Python Developer\",\n        \"summary\": \"I am a python developer with 1.5 years experience.\",\n        \"contact_number\": \"+91 7877777777\",\n        \"education\": [],\n        \"work_experience\": 0,\n        \"projects\": [],\n        \"skills\": [],\n        \"current_salary\": 180000,\n        \"expected_salary\": 420000,\n        \"notice_period\": 90,\n        \"primary_address\": \"Mohali\",\n        \"secondary_address\": \"Mohali\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "CandidateById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}accounts/candidates/:id",
+									"host": [
+										"{{base_url}}accounts"
+									],
+									"path": [
+										"candidates",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "MissingRequiredFields",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}accounts/candidates",
+											"host": [
+												"{{base_url}}accounts"
+											],
+											"path": [
+												"candidates"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Date",
+											"value": "Thu, 21 Aug 2025 15:51:15 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "WSGIServer/0.2 CPython/3.12.0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept, Cookie"
+										},
+										{
+											"key": "Allow",
+											"value": "GET, POST, HEAD, OPTIONS"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Length",
+											"value": "122"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"username\": [\n        \"This field is required.\"\n    ],\n    \"password\": [\n        \"This field is required.\"\n    ],\n    \"user_profile\": [\n        \"This field is required.\"\n    ]\n}"
+								},
+								{
+									"name": "SuccessfulProfileCreation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"username\": \"admin11\",\r\n    \"password\": \"admin\",\r\n    \"user_profile\": {\r\n        \"headline\": \"Python Developer\",\r\n        \"summary\": \"I am a python developer with 1.5 years experience.\",\r\n        \"contact_number\": \"+91 7877777777\",\r\n        \"work_experience\": 0,\r\n        \"current_salary\": 180000,\r\n        \"expected_salary\": 420000,\r\n        \"notice_period\": 90,\r\n        \"primary_address\": \"Mohali\",\r\n        \"secondary_address\": \"Mohali\"\r\n    }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}accounts/candidates",
+											"host": [
+												"{{base_url}}accounts"
+											],
+											"path": [
+												"candidates"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Date",
+											"value": "Thu, 21 Aug 2025 16:12:10 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "WSGIServer/0.2 CPython/3.12.0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept, Cookie"
+										},
+										{
+											"key": "Allow",
+											"value": "GET, POST, HEAD, OPTIONS"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Length",
+											"value": "371"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 3,\n    \"username\": \"admin11\",\n    \"email\": \"\",\n    \"user_profile\": {\n        \"headline\": \"Python Developer\",\n        \"summary\": \"I am a python developer with 1.5 years experience.\",\n        \"contact_number\": \"+91 7877777777\",\n        \"education\": [],\n        \"work_experience\": 0,\n        \"projects\": [],\n        \"skills\": [],\n        \"current_salary\": 180000,\n        \"expected_salary\": 420000,\n        \"notice_period\": 90,\n        \"primary_address\": \"Mohali\",\n        \"secondary_address\": \"Mohali\"\n    }\n}"
+								},
+								{
+									"name": "UserAlreadyExistError",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"username\": \"admin1\",\r\n    \"password\": \"admin\",\r\n    \"user_profile\": {\r\n        \"headline\": \"Python Developer\",\r\n        \"summary\": \"I am a python developer with 1.5 years experience.\",\r\n        \"contact_number\": \"+91 7877777777\",\r\n        \"work_experience\": 0,\r\n        \"current_salary\": 180000,\r\n        \"expected_salary\": 420000,\r\n        \"notice_period\": 90,\r\n        \"primary_address\": \"Mohali\",\r\n        \"secondary_address\": \"Mohali\"\r\n    }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}accounts/candidates",
+											"host": [
+												"{{base_url}}accounts"
+											],
+											"path": [
+												"candidates"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Date",
+											"value": "Thu, 21 Aug 2025 16:09:02 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "WSGIServer/0.2 CPython/3.12.0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept, Cookie"
+										},
+										{
+											"key": "Allow",
+											"value": "GET, POST, HEAD, OPTIONS"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Length",
+											"value": "58"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"username\": [\n        \"A user with that username already exists.\"\n    ]\n}"
+								},
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}accounts/candidates/:id",
+											"host": [
+												"{{base_url}}accounts"
+											],
+											"path": [
+												"candidates",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Date",
+											"value": "Thu, 21 Aug 2025 16:58:14 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "WSGIServer/0.2 CPython/3.12.0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept"
+										},
+										{
+											"key": "Allow",
+											"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Length",
+											"value": "371"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 1,\n    \"username\": \"admin\",\n    \"email\": \"\",\n    \"user_profile\": {\n        \"headline\": \"Python developer\",\n        \"summary\": \"Python dev\",\n        \"contact_number\": \"+1234589\",\n        \"education\": [\n            {\n                \"class\": \"BCA\",\n                \"title\": \"College\"\n            }\n        ],\n        \"work_experience\": 1.5,\n        \"projects\": [\n            {}\n        ],\n        \"skills\": [\n            \"python\",\n            \"js\"\n        ],\n        \"current_salary\": 180000,\n        \"expected_salary\": 420000,\n        \"notice_period\": 45,\n        \"primary_address\": \"Mohali\",\n        \"secondary_address\": \"Mohali\"\n    }\n}"
+								},
+								{
+									"name": "NotFoundWithId",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}accounts/candidates/:id",
+											"host": [
+												"{{base_url}}accounts"
+											],
+											"path": [
+												"candidates",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "100"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Date",
+											"value": "Thu, 21 Aug 2025 16:58:48 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "WSGIServer/0.2 CPython/3.12.0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept"
+										},
+										{
+											"key": "Allow",
+											"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Length",
+											"value": "45"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"detail\": \"No User matches the given query.\"\n}"
+								}
+							]
+						},
+						{
+							"name": "CandidateUpdateById",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 3,\r\n    \"username\": \"admin11111\",\r\n    \"password\": \"admin11111\",\r\n    \"email\": \"\",\r\n    \"user_profile\": {\r\n        \"headline\": \"Python Developer\",\r\n        \"summary\": \"I am a python developer with 1.5 years experience.\",\r\n        \"contact_number\": \"+91 7877777777\",\r\n        \"education\": [],\r\n        \"work_experience\": 0.0,\r\n        \"projects\": [],\r\n        \"skills\": [],\r\n        \"current_salary\": 180000,\r\n        \"expected_salary\": 420000,\r\n        \"notice_period\": 90,\r\n        \"primary_address\": \"Mohali\",\r\n        \"secondary_address\": \"Mohali\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}accounts/candidates/:id",
+									"host": [
+										"{{base_url}}accounts"
+									],
+									"path": [
+										"candidates",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "NotFoundWithId",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}accounts/candidates/:id",
+											"host": [
+												"{{base_url}}accounts"
+											],
+											"path": [
+												"candidates",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "100"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Date",
+											"value": "Thu, 21 Aug 2025 16:58:48 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "WSGIServer/0.2 CPython/3.12.0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept"
+										},
+										{
+											"key": "Allow",
+											"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Length",
+											"value": "45"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"detail\": \"No User matches the given query.\"\n}"
+								},
+								{
+									"name": "SuccessfulModification",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"id\": 3,\r\n    \"username\": \"admin11111\",\r\n    \"password\": \"admin11111\",\r\n    \"email\": \"\",\r\n    \"user_profile\": {\r\n        \"headline\": \"Python Developer\",\r\n        \"summary\": \"I am a python developer with 1.5 years experience.\",\r\n        \"contact_number\": \"+91 7877777777\",\r\n        \"education\": [],\r\n        \"work_experience\": 0.0,\r\n        \"projects\": [],\r\n        \"skills\": [],\r\n        \"current_salary\": 180000,\r\n        \"expected_salary\": 420000,\r\n        \"notice_period\": 90,\r\n        \"primary_address\": \"Mohali\",\r\n        \"secondary_address\": \"Mohali\"\r\n    }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}accounts/candidates/:id",
+											"host": [
+												"{{base_url}}accounts"
+											],
+											"path": [
+												"candidates",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "3"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Date",
+											"value": "Thu, 21 Aug 2025 17:39:46 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "WSGIServer/0.2 CPython/3.12.0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept"
+										},
+										{
+											"key": "Allow",
+											"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Length",
+											"value": "374"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 3,\n    \"username\": \"admin11111\",\n    \"email\": \"\",\n    \"user_profile\": {\n        \"headline\": \"Python Developer\",\n        \"summary\": \"I am a python developer with 1.5 years experience.\",\n        \"contact_number\": \"+91 7877777777\",\n        \"education\": [],\n        \"work_experience\": 0,\n        \"projects\": [],\n        \"skills\": [],\n        \"current_salary\": 180000,\n        \"expected_salary\": 420000,\n        \"notice_period\": 90,\n        \"primary_address\": \"Mohali\",\n        \"secondary_address\": \"Mohali\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "CandidateDeleteById",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}accounts/candidates/:id",
+									"host": [
+										"{{base_url}}accounts"
+									],
+									"path": [
+										"candidates",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}accounts/candidates/:id",
+											"host": [
+												"{{base_url}}accounts"
+											],
+											"path": [
+												"candidates",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "3"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Date",
+											"value": "Thu, 21 Aug 2025 17:43:28 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "WSGIServer/0.2 CPython/3.12.0"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept"
+										},
+										{
+											"key": "Allow",
+											"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Length",
+											"value": "0"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										}
+									],
+									"cookie": [],
+									"body": null
+								},
+								{
+									"name": "CandiateNotFoundWithId",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}accounts/candidates/:id",
+											"host": [
+												"{{base_url}}accounts"
+											],
+											"path": [
+												"candidates",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "3"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Date",
+											"value": "Thu, 21 Aug 2025 17:43:56 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "WSGIServer/0.2 CPython/3.12.0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept"
+										},
+										{
+											"key": "Allow",
+											"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Length",
+											"value": "45"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"detail\": \"No User matches the given query.\"\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "JobPortal",
+			"item": [
+				{
+					"name": "JobList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}jobs",
+							"host": [
+								"{{base_url}}jobs"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}jobs",
+									"host": [
+										"{{base_url}}jobs"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 21 Aug 2025 17:54:35 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "473"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"created_at\": \"2025-08-20T17:57:33.697310Z\",\n        \"updated_at\": \"2025-08-20T17:57:33.697310Z\",\n        \"title\": \"Python Full Stack Developer\",\n        \"description\": \"Need python full stack developer on urgently basis.\",\n        \"required_skills\": [\n            \"python\",\n            \"django\",\n            \"flask\",\n            \"fastapi\"\n        ],\n        \"preferred_skills\": [\n            \"client-communication\",\n            \"database-management\",\n            \"server-maintanence\"\n        ],\n        \"experience_required\": 2,\n        \"education_required\": [\n            \"BCA\"\n        ],\n        \"employment_type\": \"full_time\",\n        \"deadline\": null,\n        \"is_active\": true,\n        \"company\": 1\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "JobCreate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Python fresher\",\r\n    \"description\": \"Needs a python fresher\",\r\n    \"company_name\": \"Test 11111111\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}jobs",
+							"host": [
+								"{{base_url}}jobs"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "BadInputs",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}jobs",
+									"host": [
+										"{{base_url}}jobs"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 21 Aug 2025 17:56:00 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "117"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"title\": [\n        \"This field is required.\"\n    ],\n    \"description\": [\n        \"This field is required.\"\n    ],\n    \"company\": [\n        \"This field is required.\"\n    ]\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Python fresher\",\r\n    \"description\": \"Needs a python fresher\",\r\n    \"company_name\": \"Test 11111111\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}jobs",
+									"host": [
+										"{{base_url}}jobs"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 21 Aug 2025 18:36:14 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "248"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"title\": \"Python fresher\",\n    \"description\": \"Needs a python fresher\",\n    \"required_skills\": [],\n    \"preferred_skills\": [],\n    \"experience_required\": null,\n    \"education_required\": [],\n    \"employment_type\": \"full_time\",\n    \"deadline\": null,\n    \"is_active\": true,\n    \"company\": \"Test 11111111\"\n}"
+						}
+					]
+				},
+				{
+					"name": "RecommendedJobs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}jobs/recommended",
+							"host": [
+								"{{base_url}}jobs"
+							],
+							"path": [
+								"recommended"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}jobs/recommended",
+									"host": [
+										"{{base_url}}jobs"
+									],
+									"path": [
+										"recommended"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 21 Aug 2025 18:38:23 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1128"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"title\": \"Python Full Stack Developer\",\n        \"description\": \"Need python full stack developer on urgently basis.\",\n        \"required_skills\": [\n            \"python\",\n            \"django\",\n            \"flask\",\n            \"fastapi\"\n        ],\n        \"preferred_skills\": [\n            \"client-communication\",\n            \"database-management\",\n            \"server-maintanence\"\n        ],\n        \"experience_required\": 2,\n        \"education_required\": [\n            \"BCA\"\n        ],\n        \"employment_type\": \"full_time\",\n        \"deadline\": null,\n        \"is_active\": true,\n        \"company\": \"Aviox tehcnologies\"\n    },\n    {\n        \"title\": \"Python fresher\",\n        \"description\": \"Needs a python fresher\",\n        \"required_skills\": [],\n        \"preferred_skills\": [],\n        \"experience_required\": null,\n        \"education_required\": [],\n        \"employment_type\": \"full_time\",\n        \"deadline\": null,\n        \"is_active\": true,\n        \"company\": \"Test\"\n    },\n    {\n        \"title\": \"Python fresher\",\n        \"description\": \"Needs a python fresher\",\n        \"required_skills\": [],\n        \"preferred_skills\": [],\n        \"experience_required\": null,\n        \"education_required\": [],\n        \"employment_type\": \"full_time\",\n        \"deadline\": null,\n        \"is_active\": true,\n        \"company\": \"Test\"\n    },\n    {\n        \"title\": \"Python fresher\",\n        \"description\": \"Needs a python fresher\",\n        \"required_skills\": [],\n        \"preferred_skills\": [],\n        \"experience_required\": null,\n        \"education_required\": [],\n        \"employment_type\": \"full_time\",\n        \"deadline\": null,\n        \"is_active\": true,\n        \"company\": \"Test 11111111\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "JobById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}jobs/:id",
+							"host": [
+								"{{base_url}}jobs"
+							],
+							"path": [
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}jobs/:id",
+									"host": [
+										"{{base_url}}jobs"
+									],
+									"path": [
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 21 Aug 2025 18:42:37 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "239"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"title\": \"Python fresher\",\n    \"description\": \"Needs a python fresher\",\n    \"required_skills\": [],\n    \"preferred_skills\": [],\n    \"experience_required\": null,\n    \"education_required\": [],\n    \"employment_type\": \"full_time\",\n    \"deadline\": null,\n    \"is_active\": true,\n    \"company\": \"Test\"\n}"
+						}
+					]
+				},
+				{
+					"name": "JobUpdateById",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Junior Python Developer\",\r\n  \"description\": \"We are looking for a motivated Python fresher to join our backend team. The candidate will work on web applications, REST APIs, and automation scripts.\",\r\n  \"required_skills\": [\"Python\", \"Django\", \"REST API\", \"Git\", \"SQL\", \"Linux\", \"Nginx\"],\r\n  \"preferred_skills\": [\"Docker\", \"Celery\", \"Redis\", \"CI/CD\", \"PostgreSQL\"],\r\n  \"experience_required\": 0,\r\n  \"education_required\": [\r\n    \"Bachelor's in Computer Science\",\r\n    \"Bachelor's in Information Technology\",\r\n    \"B.Tech in Software Engineering\"\r\n  ],\r\n  \"employment_type\": \"full_time\",\r\n  \"deadline\": \"2025-09-30\",\r\n  \"is_active\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}jobs/:id",
+							"host": [
+								"{{base_url}}jobs"
+							],
+							"path": [
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "NotFoundWithId",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Python fresher\",\r\n    \"description\": \"Needs a python fresher\",\r\n    \"company_name\": \"Test 11111111\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}jobs/:id",
+									"host": [
+										"{{base_url}}jobs"
+									],
+									"path": [
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "3111"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 21 Aug 2025 18:45:05 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detail\": \"No Job matches the given query.\"\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Python fresher\",\r\n    \"description\": \"Needs a python fresher\",\r\n    \"required_skills\": [\"Nginx\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}jobs/:id",
+									"host": [
+										"{{base_url}}jobs"
+									],
+									"path": [
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 21 Aug 2025 18:46:40 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "327"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"title\": \"Python fresher\",\n    \"description\": \"Needs a python fresher\",\n    \"required_skills\": [\n        \"Nginx\"\n    ],\n    \"preferred_skills\": [\n        \"client-communication\",\n        \"database-management\",\n        \"server-maintanence\"\n    ],\n    \"experience_required\": 2,\n    \"education_required\": [\n        \"BCA\"\n    ],\n    \"employment_type\": \"full_time\",\n    \"deadline\": null,\n    \"is_active\": true,\n    \"company\": \"Aviox tehcnologies\"\n}"
+						},
+						{
+							"name": "JobUpdateById",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Junior Python Developer\",\r\n  \"description\": \"We are looking for a motivated Python fresher to join our backend team. The candidate will work on web applications, REST APIs, and automation scripts.\",\r\n  \"required_skills\": [\"Python\", \"Django\", \"REST API\", \"Git\", \"SQL\", \"Linux\", \"Nginx\"],\r\n  \"preferred_skills\": [\"Docker\", \"Celery\", \"Redis\", \"CI/CD\", \"PostgreSQL\"],\r\n  \"experience_required\": 0,\r\n  \"education_required\": [\r\n    \"Bachelor's in Computer Science\",\r\n    \"Bachelor's in Information Technology\",\r\n    \"B.Tech in Software Engineering\"\r\n  ],\r\n  \"employment_type\": \"full_time\",\r\n  \"deadline\": \"2025-09-30\",\r\n  \"is_active\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}jobs/:id",
+									"host": [
+										"{{base_url}}jobs"
+									],
+									"path": [
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 22 Aug 2025 03:22:15 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "588"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"title\": \"Junior Python Developer\",\n    \"description\": \"We are looking for a motivated Python fresher to join our backend team. The candidate will work on web applications, REST APIs, and automation scripts.\",\n    \"required_skills\": [\n        \"Python\",\n        \"Django\",\n        \"REST API\",\n        \"Git\",\n        \"SQL\",\n        \"Linux\",\n        \"Nginx\"\n    ],\n    \"preferred_skills\": [\n        \"Docker\",\n        \"Celery\",\n        \"Redis\",\n        \"CI/CD\",\n        \"PostgreSQL\"\n    ],\n    \"experience_required\": 0,\n    \"education_required\": [\n        \"Bachelor's in Computer Science\",\n        \"Bachelor's in Information Technology\",\n        \"B.Tech in Software Engineering\"\n    ],\n    \"employment_type\": \"full_time\",\n    \"deadline\": \"2025-09-30\",\n    \"is_active\": true,\n    \"company\": \"Test\"\n}"
+						}
+					]
+				},
+				{
+					"name": "JobDeleteById",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}jobs/:id",
+							"host": [
+								"{{base_url}}jobs"
+							],
+							"path": [
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}jobs/:id",
+									"host": [
+										"{{base_url}}jobs"
+									],
+									"path": [
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 21 Aug 2025 18:44:25 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.0"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "JobApplicationList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}job-applications",
+							"host": [
+								"{{base_url}}job-applications"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}job-applications",
+									"host": [
+										"{{base_url}}job-applications"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 21 Aug 2025 19:31:58 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "303"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"created_at\": \"2025-08-21T19:16:35.903947Z\",\n        \"updated_at\": \"2025-08-21T19:16:35.903947Z\",\n        \"cover_letter\": null,\n        \"status\": \"applied\",\n        \"user\": 4,\n        \"job\": 1\n    },\n    {\n        \"id\": 2,\n        \"created_at\": \"2025-08-21T19:17:37.713729Z\",\n        \"updated_at\": \"2025-08-21T19:17:37.713729Z\",\n        \"cover_letter\": null,\n        \"status\": \"applied\",\n        \"user\": 4,\n        \"job\": 2\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "JobApplicationCreate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": 7,\r\n    \"job\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}job-applications",
+							"host": [
+								"{{base_url}}job-applications"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user\": 4,\r\n    \"job\": 2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}job-applications",
+									"host": [
+										"{{base_url}}job-applications"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 21 Aug 2025 19:17:37 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "150"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"created_at\": \"2025-08-21T19:17:37.713729Z\",\n    \"updated_at\": \"2025-08-21T19:17:37.713729Z\",\n    \"cover_letter\": null,\n    \"status\": \"applied\",\n    \"user\": 4,\n    \"job\": 2\n}"
+						}
+					]
+				},
+				{
+					"name": "AiPoweredCandidates",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": 4,\r\n    \"job\": 2\r\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}jobs/:job_id/top-candidates",
+							"host": [
+								"{{base_url}}jobs"
+							],
+							"path": [
+								":job_id",
+								"top-candidates"
+							],
+							"variable": [
+								{
+									"key": "job_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU1ODgzNjM2LCJpYXQiOjE3NTU3OTcyMzYsImp0aSI6IjM0Mzk1MmM2NjE2NDQ5OWQ5ZmY2YTVhYWFiMzEyNzVkIiwidXNlcl9pZCI6IjQifQ.C4gZtO7FtYpGCEHMEsJ3XKMJ7MxKhSKdtxc1yPwWVyE",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
